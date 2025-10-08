@@ -8,6 +8,7 @@ class Blog(models.Model):
     titulo_sobre = models.CharField(max_length=100)
     subtitulo_sobre = models.CharField(max_length=100)
     bg_sobre = models.ImageField(upload_to="blog/bg/", blank=True)
+    conteudo_sobre = models.TextField()
     titulo_contato = models.CharField(max_length=100)
     subtitulo_contato = models.CharField(max_length=100)
     bg_contato = models.ImageField(upload_to="blog/bg/", blank=True)

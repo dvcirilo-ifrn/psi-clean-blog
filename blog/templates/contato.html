@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Contato{% endblock title %}
-{% block page_title %}Contato{% endblock page_title %}
-{% block page_subtitle %}Envie suas dúvidas/sugestões para esse blog relevante{% endblock page_subtitle %}
-{% block header_img %}{% static 'assets/img/contact-bg.jpg' %}{% endblock header_img %}
+{% block title %}{{ blog.titulo_contato }}{% endblock title %}
+{% block page_title %}{{ blog.titulo_contato }}{% endblock page_title %}
+{% block page_subtitle %}{{ blog.subtitulo_contato }}{% endblock page_subtitle %}
+{% block header_img %}{{ blog.bg_contato.url }}{% endblock header_img %}
 
 {% block content %}
-<p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 <div class="my-5">
     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
         <div class="form-floating">
