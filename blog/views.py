@@ -6,23 +6,23 @@ def index(request):
         "blog": Blog.objects.first(),
         "postagens": Postagem.objects.all(),
     }
-    return render(request, 'index.html', context)
+    return render(request, 'blog/index.html', context)
 
 def post(request, id_post):
     context = {
         "blog": Blog.objects.first(),
         "post": get_object_or_404(Postagem, id=id_post),
     }
-    return render(request, 'post.html', context)
+    return render(request, 'blog/post.html', context)
 
 def sobre(request):
     context = {
         "blog": Blog.objects.first(),
     }
-    return render(request, 'sobre.html', context)
+    return render(request, 'blog/sobre.html', context)
 
 def contato(request):
     context = {
         "blog": Blog.objects.first(),
     }
-    return render(request, 'contato.html', context)
+    return render(request, 'blog/contato.html', context)

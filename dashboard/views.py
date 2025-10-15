@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from blog.models import Blog, Postagem
+from blog.forms import PostagemModelForm 
 
 def index(request):
     context = {
@@ -14,15 +15,27 @@ def posts(request):
     }
     return render(request, "dashboard/posts.html", context)
 
-def criar_post(request):
+def posts_novo(request):
+    context = {
+        "blog": Blog.objects.first(),
+    }
+    if request.method == "POST":
+        print("ajaj")
+        return redirect("dashboard:posts")
+    else:
+        context["form"] = PostagemModelForm()
+    return render(request, "dashboard/posts_novo.html", context)
+
+
+
+
+
+def posts_detalhar(request, id_post):
     pass
 
-def visualizar_post(request, id_post):
+def posts_editar(request, id_post):
     pass
 
-def editar_post(request, id_post):
-    pass
-
-def remover_post(request, id_post):
+def posts_remover(request, id_post):
     pass
 
