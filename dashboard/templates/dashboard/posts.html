@@ -1,4 +1,5 @@
 {% extends "dashboard/base.html" %}
+{% block title %}Postagens{% endblock title %}
 {% block content %}
 <div class="container-fluid px-4">
     <div class="row py-4">
@@ -30,9 +31,9 @@
                             <td>{{ post.criado_em }}</td>
                             <td>{{ post.modificado_em }}</td>
                             <td>
-                                <a class="btn btn-primary" href="#"><i class="fa-regular fa-eye"></i></a>
-                                <a class="btn btn-secondary" href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a class="btn btn-danger" href="#"><i class="fa-regular fa-trash-can"></i></a>
+                                <a class="btn btn-primary" href="{% url 'dashboard:posts_detalhar' post.id %}"><i class="fa-regular fa-eye"></i></a>
+                                <a class="btn btn-secondary" href="{% url 'dashboard:posts_editar' post.id %}"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a class="btn btn-danger" href="{% url 'dashboard:posts_remover' post.id %}"><i class="fa-regular fa-trash-can"></i></a>
                             </td>
                           </tr>
                         {% endfor %}

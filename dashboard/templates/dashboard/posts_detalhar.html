@@ -1,0 +1,26 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ post.titulo }}{% endblock title %}
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="row py-4">
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    Detalhar Postagem
+                </div>
+                <div class="card-body">
+                    {% if post.bg_image %}
+                    <img class="img-fluid py-3" src="{{ post.bg_image.url }}" alt="">
+                    {% endif %}
+                    <p><strong>Título:</strong> {{ post.titulo }}</p>
+                    <p><strong>Subtítulo:</strong> {{ post.subtitulo }}</p>
+                    <p><strong>Autor:</strong> {{ post.autor.first_name }}</p>
+                    <p><strong>Conteúdo:</strong> {{ post.conteudo }}</p>
+                    <p><strong>Data de criação:</strong> {{ post.criado_em }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
